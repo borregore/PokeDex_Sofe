@@ -19,5 +19,4 @@ defmodule PokeDexWeb.PokedexController do
       html conn, template
     end
   end
-
 end

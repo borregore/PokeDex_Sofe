@@ -21,7 +21,6 @@ defmodule PokeDexWeb.Router do
     get "/pokedex", PokedexController, :start
   end
 
-
   # Other scopes may use custom stacks.
   # scope "/api", PokeDexWeb do
   #   pipe_through :api
