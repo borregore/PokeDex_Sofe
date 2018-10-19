@@ -11,7 +11,7 @@ defmodule PokeDexWeb.PageController do
     pokemon = JSON.decode!(response.body)["forms"] |> List.first
 
     html conn, """
-  <h1>#{pokemon["name"]}</h1>"
+  <h1>#{pokemon["name"]}</h1>
 """
   end
 end
