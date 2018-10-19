@@ -5,13 +5,11 @@ defmodule PokeDexWeb.PageController do
     render conn, "index.html"
   end
 
-  def search(conn, %{"pokeid" => poke_id}) do
-    url = "https://pokeapi.co/api/v2/pokemon/#{poke_id}/"
-    response = HTTPoison.get!(url)
-    pokemon = JSON.decode!(response.body)["forms"] |> List.first
-
+  def search(conn, %{"i" => i}) do
+    #TODO please kill me
+    p = ((("https://pokeapi.co/api/v2/pokemon/#{i}/" |> HTTPoison.get!).body |> JSON.decode!)["forms"] |> List.first) ["name"]
     html conn, """
-  <h1>#{pokemon["name"]}</h1>
+  <h1>#{p}</h1>
 """
   end
 end
