@@ -21,6 +21,8 @@ defmodule PokeDexWeb.Router do
     get "/pokedex", PokedexController, :s
     get "/catch", CatchController, :f3
     get "/catchit", CatchPokemonController, :f4
+    get "/whoPokemon", WhoIsThatPokemon, :whoIs
+    get "/whoPokemonValidate", WhoIsThatPokemon, :f1
   end
 
 
