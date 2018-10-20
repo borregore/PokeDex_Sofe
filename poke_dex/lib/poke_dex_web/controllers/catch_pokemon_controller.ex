@@ -9,7 +9,7 @@ defmodule PokeDexWeb.CatchPokemonController do
     <h1>Gotta catch'em all</h1>
     <h3>Capture rate: #{c}</h3>
     <h2>Pokemon ##{i} #{p["name"]}</h2>
-    <a href="https://www.latlmes.com/breaking/sofe-scoreboard-3"><button>Catch</button></a>
+    <a href="http://fgnoe.com/sofe_scoreboard"><button>Catch</button></a>
 """
   end
 
