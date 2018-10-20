@@ -1,22 +1,22 @@
 defmodule PokeDexWeb.PokedexController do
   use PokeDexWeb, :controller
 
-  def start(conn, _params) do
-    count = 1
-    html = "<h1>Pokedex</h1>"
-    pokedex(conn, count, html)
+  def s(conn, _params) do
+    c = 1
+    h = "<h1>Pokedex</h1>"
+    p(conn, c, h)
   end
 
-  def pokedex(conn, poke_id, template) when is_integer(poke_id) do
-    if poke_id <= 15 do
-      url = "https://pokeapi.co/api/v2/pokemon/#{poke_id}/"
-      response = HTTPoison.get!(url)
-      pokemon = JSON.decode!(response.body)["forms"] |> List.first
-      template = template <> "<h2>##{poke_id} #{pokemon["name"]}</h2>"
-      poke_id = poke_id+1
-      pokedex(conn, poke_id, template)
+  def p(conn, i, t) do
+    if i <= 15 do
+      u = "https://pokeapi.co/api/v2/pokemon/#{i}/"
+      r = HTTPoison.get!(u)
+      p2 = JSON.decode!(r.body)["forms"] |> List.first
+      t = t <> "<h2>##{i} #{p2["name"]}</h2>"
+      i = i+1
+      p(conn, i, t)
     else
-      html conn, template
+      html conn, t
     end
   end
 

@@ -13,20 +13,4 @@ defmodule PokeDexWeb.PageController do
 """
   end
 
-  def pokemon_to_catch(conn, _params) do
-    number_pokemon = :rand.uniform(3) + 2
-
-    firstFor = for i<- 1..number_pokemon, do: i
-
-    btnCatch = "<button type=\"button\">Catch!</button>"
-    href = "<a href=\"catchit\">Catch!</a>"
-
-    s = Enum.reduce(firstFor, "", fn(time,acc) ->
-        random_number = :rand.uniform(802)
-        acc <> "<br>Pokemon ##{random_number} is near by. Do you want to catch it?" <> href
-    end)
-
-    html conn, s
-  end
-
 end
